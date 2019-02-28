@@ -67,16 +67,16 @@ def build_message(response):
         '%Y年%m月%d日%H時%M分')
 
     text = '{}までのAWSの料金'.format(timestamp)
-    attachments_text = "${}".format(cost)
+    attachment_text = '${}'.format(cost)
 
     if float(cost) >= 100.0:
-        color = "#ff0000"  # red
+        color = 'danger'   # red
     elif float(cost) >= 10.0:
-        color = "warning"  # yellow
+        color = 'warning'  # yellow
     else:
-        color = "good"     # green
+        color = 'good'     # green
 
-    atachements = {'text': attachments_text, 'color': color}
+    atachements = {'text': attachment_text, 'color': color}
 
     message = {
         'text': text,
